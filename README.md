@@ -38,5 +38,14 @@ finally, to get our wasm package, we will use a linker (wasm-ld)
 `wasm-ld --no-entry --export-dynamic --allow-undefined main.o -o main.wasm`
 
 This command tells `wasm-ld` not to expect a main function (`--no-entry`), to export all symbols (`--export-dynamic`), to allow undefined symbols (`--allow-undefined`), and to output the result to `main.wasm` in the same src directory.
+Note: You can use the `wasm-tester.py` script to test the integrity of the wasm module. 
 
+## Step 6: WASM optimizations (Optional)
+we'll be using the binaryen toolchain for optimizing our wasm module. 
 
+`wasm-opt -O2 -o main_optimized.wasm main.wasm`
+
+A -O2 level optimization is being used for a meduium level optimisation. 
+Note that this command can take a few minutes to execute.
+
+## Step 
